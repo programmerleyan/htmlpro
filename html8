@@ -1,0 +1,13 @@
+<div id="hero" class="kutu">
+  <h2>Hoşgeldin</h2>
+</div>
+
+<style>
+  .kutu { padding: 20px; border: 1px solid #ccc; }
+  #hero { background: #f9f9f9; }
+</style>
+
+<script>
+  // id ile seçip içerik değiştirme
+  document.getElementById('hero').querySelector('h2').textContent = 'Güncellenmiş Başlık';
+</script>
