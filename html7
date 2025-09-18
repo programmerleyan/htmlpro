@@ -1,0 +1,13 @@
+<header><h1>Site Başlığı</h1></header>
+<nav>
+  <a href="#anasayfa">Anasayfa</a>
+  <a href="#iletisim">İletişim</a>
+</nav>
+<main>
+  <article>
+    <h2>Yazı Başlığı</h2>
+    <p>Yazı içeriği...</p>
+  </article>
+  <aside>Yan içerik / reklam</aside>
+</main>
+<footer>© 2025 Şirket</footer>
