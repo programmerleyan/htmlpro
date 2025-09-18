@@ -1,0 +1,11 @@
+<!-- Sırasız liste -->
+<ul>
+  <li>Elma</li>
+  <li>Armut</li>
+</ul>
+
+<!-- Sıralı liste -->
+<ol>
+  <li>Hazırlık</li>
+  <li>Yapma</li>
+</ol>
