@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Interaktif Örnek</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .button { padding: 10px 16px; border-radius: 8px; cursor: pointer; border: none; }
+  </style>
+</head>
+<body>
+  <h1 id="baslik">Butona bas</h1>
+  <button class="button" id="buton">Tıkla beni</button>
+
+  <script>
+    const btn = document.getElementById('buton');
+    const baslik = document.getElementById('baslik');
+    btn.addEventListener('click', () => {
+      baslik.textContent = 'Butona tıkladınız! ' + new Date().toLocaleTimeString();
+    });
+  </script>
+</body>
+</html>
