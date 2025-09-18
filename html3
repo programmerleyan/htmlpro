@@ -1,0 +1,5 @@
+<!-- Link: target="_blank" yeni sekmede açar -->
+<a href="https://example.com" target="_blank" rel="noopener">Example sitesine git</a>
+
+<!-- Resim: alt metni erişilebilirlik için önemlidir -->
+<img src="resim.jpg" alt="Açıklayıcı alt metin" width="300">
