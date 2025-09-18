@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Leyan Yazılım — Yenilikçi Çözümler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Leyan Yazılım — web, mobil ve kurumsal yazılım çözümleri. Tasarım odaklı, performanslı projeler.">
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent1:#7c3aed; /* mor */
+      --accent2:#06b6d4; /* cyan */
+      --glass: rgba(255,255,255,0.04);
+      --radius:12px;
+      --maxw:1200px;
+      --ff: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--ff);
+      background:linear-gradient(180deg,#071124 0%, #071827 45%, #0b1220 100%);
+      color: #e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding-bottom:80px;
+    }
+    .container{max-width:var(--maxw);margin:0 auto;padding:28px}
+
+    /* NAV */
+    header{position:sticky;top:12px;z-index:60}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 14px;background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);backdrop-filter:blur(6px);border-radius:14px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:white}
+    .brand h1{font-size:16px;margin:0}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600}
+    nav a:hover{color:var(--accent2)}
+    .cta{background:linear-gradient(90deg,var(--accent2),var(--accent1));padding:8px 14px;border-radius:10px;color:#021626;font-weight:700;border:none;cursor:pointer}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:56px 12px}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:28px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,0.5)}
+    .eyebrow{display:inline-block;padding:6px 10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));border-radius:999px;font-weight:700;color:#02121a}
+    h2.hero-title{font-size:36px;margin:14px 0 6px}
+    p.lead{color:var(--muted);margin-top:8px}
+    .features{display:flex;gap:12px;margin-top:18px}
+    .feature{background:var(--glass);padding:12px;border-radius:12px;font-weight:600}
+
+    /* CTA group */
+    .hero-buttons{display:flex;gap:12px;margin-top:22px}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:var(--muted);cursor:pointer}
+
+    /* Promo card */
+    .promo{padding:18px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.016), transparent);}
+    .stats{display:flex;gap:12px;justify-content:space-between}
+    .stat{flex:1;text-align:center}
+    .stat h3{margin:0}
+
+    /* SERVICES */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+    .service{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:22px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+    .service h4{margin:12px 0 6px}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-weight:700}
+
+    /* PORTFOLIO */
+    .portfolio{margin-top:40px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{position:relative;border-radius:12px;overflow:hidden;background:#061322;height:180px;display:flex;align-items:flex-end;padding:14px}
+    .card img{position:absolute;inset:0;object-fit:cover;width:100%;height:100%;opacity:0.22}
+    .card .meta{position:relative;z-index:2}
+
+    /* CONTACT */
+    .contact{display:grid;grid-template-columns:1fr 420px;gap:18px;margin-top:42px}
+    form{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px}
+    label{display:block;font-weight:600;margin-top:12px}
+    input,textarea,select{width:100%;padding:12px;border-radius:10px;margin-top:6px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    textarea{min-height:140px}
+
+    /* FOOTER */
+    footer{margin-top:48px;padding:28px;border-radius:14px;background:linear-gradient(90deg, rgba(255,255,255,0.01), transparent);}
+    .social{display:flex;gap:12px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .contact{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      nav a{display:none}
+      .hero{padding:28px 4px}
+      .services{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .logo{width:38px;height:38px}
+      h2.hero-title{font-size:28px}
+    }
+
+    /* subtle animations */
+    .reveal{opacity:0;transform:translateY(10px);transition:all 600ms cubic-bezier(.2,.9,.3,1)}
+    .reveal.show{opacity:1;transform:none}
+    .fade-in{animation:fadeIn .9s ease forwards}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="nav">
+        <div class="brand">
+          <div class="logo">LY</div>
+          <div>
+            <h1 style="margin:0;font-size:14px">Leyan Yazılım</h1>
+            <div style="font-size:12px;color:var(--muted);margin-top:4px">Yazılım · Tasarım · Danışmanlık</div>
+          </div>
+        </div>
+        <nav aria-label="Ana navigasyon">
+          <a href="#hakkimizda">Hakkımızda</a>
+          <a href="#hizmetler">Hizmetler</a>
+          <a href="#projeler">Projeler</a>
+          <a href="#iletisim">İletişim</a>
+          <button class="cta" onclick="document.getElementById('iletisim').scrollIntoView({behavior:'smooth'})">Teklif Al</button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card reveal">
+          <span class="eyebrow">Yeni Nesil Yazılım</span>
+          <h2 class="hero-title">Leyan Yazılım — Dijital Ürünler Tasarlar ve Gerçekleştirir</h2>
+          <p class="lead">Kullanıcı odaklı tasarım, ölçeklenebilir mimari ve güvenli çözümler. Web uygulamaları, mobil uygulamalar ve kurumsal yazılımlar geliştiriyoruz.</p>
+
+          <div class="features">
+            <div class="feature">React / Vue / Svelte</div>
+            <div class="feature">Bulut & DevOps</div>
+            <div class="feature">Performans & SEO</div>
+          </div>
+
+          <div class="hero-buttons">
+            <button class="cta" onclick="document.getElementById('hizmetler').scrollIntoView({behavior:'smooth'})">Hizmetlerimiz</button>
+            <button class="ghost" onclick="document.getElementById('projeler').scrollIntoView({behavior:'smooth'})">Portföyü Gör</button>
+          </div>
+
+          <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
+            <div class="promo">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <strong>Başarı Oranı</strong>
+                <span style="font-weight:800">%98</span>
+              </div>
+              <div class="stats" style="margin-top:8px">
+                <div class="stat"><div style="font-size:14px;color:var(--muted)">Projeler</div><h3>120+</h3></div>
+                <div class="stat"><div style="font-size:14px;color:var(--muted)">Müşteriler</div><h3>70+</h3></div>
+                <div class="stat"><div style="font-size:14px;color:var(--muted)">Yıl</div><h3>6</h3></div>
+              </div>
+            </div>
+
+            <div style="flex:1;color:var(--muted);font-size:13px">
+              <strong style="display:block">Hızlı Demo</strong>
+              7 iş günü içerisinde çalışan bir prototip sunuyoruz. Tasarım ve teknik danışmanlık dahil.
+            </div>
+          </div>
+        </div>
+
+        <aside style="display:flex;flex-direction:column;gap:14px">
+          <div class="promo reveal">
+            <h4 style="margin:0 0 8px">Neden Leyan?</h4>
+            <p style="margin:0;color:var(--muted);font-size:13px">İş odaklı çözüm mimarisi, şeffaf süreç yönetimi ve kullanıcı deneyimiyle fark yaratıyoruz.</p>
+          </div>
+
+          <div class="promo reveal" style="display:flex;flex-direction:column;gap:10px">
+            <strong style="font-size:14px">Teknoloji Yığını</strong>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <span class="pill">React</span>
+              <span class="pill">Node.js</span>
+              <span class="pill">Postgres</span>
+              <span class="pill">Kubernetes</span>
+              <span class="pill">Tailwind</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="hizmetler">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <h3 style="margin:0">Hizmetlerimiz</h3>
+          <p style="color:var(--muted);margin:0">İhtiyacınıza göre özelleştirilmiş yazılım geliştirme hizmetleri.</p>
+        </div>
+
+        <div class="services">
+          <div class="service reveal">
+            <div style="font-size:22px;font-weight:800">Web Uygulamaları</div>
+            <p style="color:var(--muted);margin:8px 0 0">Modern SPA, SSR, PWA ve e-ticaret çözümleri. Performans ve erişilebilirlik ön planda.</p>
+          </div>
+
+          <div class="service reveal">
+            <div style="font-size:22px;font-weight:800">Mobil & Native</div>
+            <p style="color:var(--muted);margin:8px 0 0">React Native / Flutter ile ölçeklenebilir mobil uygulamalar.</p>
+          </div>
+
+          <div class="service reveal">
+            <div style="font-size:22px;font-weight:800">Bulut & DevOps</div>
+            <p style="color:var(--muted);margin:8px 0 0">CI/CD, konteynerizasyon, otomatik ölçekleme ve maliyet optimizasyonu.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projeler" class="portfolio">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <h3 style="margin:0">Öne Çıkan Projeler</h3>
+          <p style="color:var(--muted);margin:0">Gerçekleştirdiğimiz bazı projelerden seçkiler.</p>
+        </div>
+
+        <div class="grid" style="margin-top:16px">
+          <div class="card reveal" style="background-image:linear-gradient(180deg, rgba(124,58,237,0.12), transparent)">
+            <img src="https://images.unsplash.com/photo-1526378722411-6b4a1dbb9f8c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcd" alt="Proje 1">
+            <div class="meta">
+              <div style="font-size:13px;color:var(--muted)">E-ticaret</div>
+              <h4 style="margin:6px 0">Shoply - Dönüşüm odaklı mağaza</h4>
+            </div>
+          </div>
+
+          <div class="card reveal" style="background-image:linear-gradient(180deg, rgba(6,182,212,0.12), transparent)">
+            <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=efgh" alt="Proje 2">
+            <div class="meta">
+              <div style="font-size:13px;color:var(--muted)">Kurumsal</div>
+              <h4 style="margin:6px 0">FinTrack - Finansal raporlama platformu</h4>
+            </div>
+          </div>
+
+          <div class="card reveal" style="background-image:linear-gradient(180deg, rgba(124,58,237,0.06), transparent)">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=ijkl" alt="Proje 3">
+            <div class="meta">
+              <div style="font-size:13px;color:var(--muted)">SaaS</div>
+              <h4 style="margin:6px 0">TaskMate - Ekip üretkenliği</h4>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section id="iletisim" class="contact">
+        <div>
+          <h3>İletişime Geç</h3>
+          <p style="color:var(--muted)">Projenizi anlatarak ücretsiz keşif talep edebilirsiniz.</p>
+
+          <div style="margin-top:18px">
+            <div style="display:flex;gap:12px;align-items:center">
+              <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800">BY</div>
+              <div>
+                <div style="font-weight:700">Bora Yılmaz</div>
+                <div style="color:var(--muted);font-size:13px">Kurucu & CTO</div>
+              </div>
+            </div>
+
+            <ul style="margin-top:12px;color:var(--muted);padding-left:18px">
+              <li>📧 hello@leyanyazilim.com</li>
+              <li>📞 +90 555 000 00 00</li>
+              <li>📍 İstanbul, Türkiye</li>
+            </ul>
+          </div>
+        </div>
+
+        <form onsubmit="handleSubmit(event)" aria-label="İletişim formu">
+          <label for="isim">İsim</label>
+          <input id="isim" name="isim" type="text" required placeholder="Adınız">
+
+          <label for="eposta">E-posta</label>
+          <input id="eposta" name="eposta" type="email" required placeholder="ornek@ornek.com">
+
+          <label for="konu">Konu</label>
+          <input id="konu" name="konu" type="text" placeholder="Proje adı veya kısa açıklama">
+
+          <label for="mesaj">Mesaj</label>
+          <textarea id="mesaj" name="mesaj" placeholder="Proje detayları, bütçe, zaman çizelgesi..." required></textarea>
+
+          <div style="display:flex;gap:12px;align-items:center;margin-top:12px">
+            <button type="submit" class="cta">Gönder</button>
+            <button type="button" class="ghost" onclick="resetForm()">Sıfırla</button>
+          </div>
+        </form>
+      </section>
+
+      <footer>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+          <div>
+            <strong>Leyan Yazılım</strong>
+            <div style="color:var(--muted);font-size:13px">© 2025 — Tüm hakları saklıdır</div>
+          </div>
+
+          <div class="social">
+            <a href="#" aria-label="LinkedIn" style="color:var(--muted);text-decoration:none">LinkedIn</a>
+            <a href="#" aria-label="GitHub" style="color:var(--muted);text-decoration:none">GitHub</a>
+            <a href="#" aria-label="Twitter" style="color:var(--muted);text-decoration:none">Twitter</a>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    // Small JS: reveal on scroll, mobile nav toggle placeholder, form handler
+    function revealOnScroll(){
+      document.querySelectorAll('.reveal').forEach(el=>{
+        const rect = el.getBoundingClientRect();
+        if(rect.top < (window.innerHeight - 60)) el.classList.add('show');
+      })
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', ()=>{revealOnScroll();document.querySelectorAll('.reveal').forEach((e,i)=>setTimeout(()=>e.classList.add('fade-in'), i*90))});
+
+    function handleSubmit(e){
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type=submit]');
+      btn.disabled = true;
+      btn.textContent = 'Gönderiliyor...';
+
+      // Basit ön gösterim. Gerçek uygulamada burada fetch ile backend'e gönderilir.
+      setTimeout(()=>{
+        alert('Mesajınız kaydedildi. En kısa sürede dönüş yapacağız!');
+        btn.disabled = false;
+        btn.textContent = 'Gönder';
+        e.target.reset();
+      },1200);
+    }
+    function resetForm(){
+      const f = document.querySelector('form'); if(f) f.reset();
+    }
+
+    // Accessibility: enable keyboard focus styles only when keyboard used
+    (function(){
+      function handleFirstTab(e){
+        if(e.key === 'Tab'){
+          document.documentElement.classList.add('user-is-tabbing');
+          window.removeEventListener('keydown', handleFirstTab);
+        }
+      }
+      window.addEventListener('keydown', handleFirstTab);
+    })();
+  </script>
+</body>
+</html>
